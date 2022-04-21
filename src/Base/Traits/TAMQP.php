@@ -201,7 +201,7 @@ trait TAMQP
             foreach ((array)$consumer->getQueue() as $queueName) {
                 foreach ((array)$consumer->getExchange() as $exchangeName) {
 
-                    echo sprintf('queueBind: %s, exchangeName: %s, routingKey: %s', $queueName, $exchangeName, $consumer->getRoutingKey()) . PHP_EOL;
+//                    echo sprintf('queueBind: %s, exchangeName: %s, routingKey: %s', $queueName, $exchangeName, $consumer->getRoutingKey()) . PHP_EOL;
 
                     $this->channel->queue_bind($queueName, $exchangeName, $consumer->getRoutingKey());
                 }

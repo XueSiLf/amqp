@@ -17,7 +17,7 @@ if (!function_exists('goWait')) {
      * @param callable   $callable 任务回调列表
      * @param float|null $timeout  超时时间，为 -1 则不限时
      */
-    function goWait(callable $callable, ?float $timeout = -1): ?array
+    function goWait(callable $callable, ?float $timeout = -1)
     {
         $taskCallables = [$callable];
         $channel = new Channel(1);
