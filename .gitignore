@@ -1,0 +1,8 @@
+#composer related
+composer.lock
+/vendor/
+composer.phar
+
+#editor related
+/.idea/
+.vscode/
