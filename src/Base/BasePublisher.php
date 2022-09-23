@@ -39,6 +39,11 @@ abstract class BasePublisher implements IPublisher
             $this->channel->close();
             $this->channel = null;
         }
+
+        if ($this->connection) {
+            $this->connection->close();
+        }
+
         $this->connection = null;
     }
 
