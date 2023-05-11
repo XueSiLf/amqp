@@ -35,6 +35,12 @@ abstract class BaseConsumer implements IConsumer
     {
         $this->connection = $this->getConnection();
         $this->channel = $this->connection->channel();
+
+        $prefetchSize = $this->config->getPrefetchSize();
+        $prefetchCount = $this->config->getPrefetchCount();
+        $global = $this->config->isGlobal();
+        $this->channel->basic_qos($prefetchSize, $prefetchCount, $global);
+
         $this->declareConsumer();
         $this->bindConsumer();
 

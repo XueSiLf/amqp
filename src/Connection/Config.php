@@ -64,6 +64,15 @@ class Config extends SplBean
     /** @var float */
     protected $channelRpcTimeout = 0.0;
 
+    /** @var int */
+    protected $prefetchSize = 0;
+
+    /** @var int */
+    protected $prefetchCount = 0;
+
+    /** @var bool */
+    protected $global = false;
+
     /**
      * @return string
      */
@@ -302,5 +311,53 @@ class Config extends SplBean
     public function setChannelRpcTimeout($channelRpcTimeout)
     {
         $this->channelRpcTimeout = $channelRpcTimeout;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPrefetchSize(): int
+    {
+        return $this->prefetchSize;
+    }
+
+    /**
+     * @param int $prefetchSize
+     */
+    public function setPrefetchSize(int $prefetchSize): void
+    {
+        $this->prefetchSize = $prefetchSize;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPrefetchCount(): int
+    {
+        return $this->prefetchCount;
+    }
+
+    /**
+     * @param int $prefetchCount
+     */
+    public function setPrefetchCount(int $prefetchCount): void
+    {
+        $this->prefetchCount = $prefetchCount;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isGlobal(): bool
+    {
+        return $this->global;
+    }
+
+    /**
+     * @param bool $global
+     */
+    public function setGlobal(bool $global): void
+    {
+        $this->global = $global;
     }
 }
